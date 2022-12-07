@@ -1,3 +1,5 @@
+package models;
+
 public abstract class Conta {
     private String numero;
 
