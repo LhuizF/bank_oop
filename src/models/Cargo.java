@@ -13,4 +13,8 @@ public class Cargo {
     public String getNome(){
         return this.nome;
     }
+
+    public void addFuncionario(Funcionario funcionario){
+        this.funcionarios.add(funcionario);
+    }
 }
