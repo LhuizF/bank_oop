@@ -9,11 +9,6 @@ public class Funcionario extends Pessoa implements IUsuario {
 
     public Funcionario(String nome, String cpf, String telefone, Double salario, Cargo cargo){
         this.setNome(nome);
-
-        if(cpf.length() != 11){
-            throw new Error("CPF inválido");
-        }
-
         this.setCpf(cpf);
         this.setTelefone(telefone);
         this.salario = salario;
