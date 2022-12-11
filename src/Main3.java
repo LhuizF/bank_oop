@@ -13,6 +13,6 @@ public class Main3 {
         account.sacar(50.00);
 
         Double value = account.calcularSaldo();
-        account.printSaldo();
+        account.printConta();
     }
 }

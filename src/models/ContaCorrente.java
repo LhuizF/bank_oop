@@ -9,11 +9,13 @@ public class ContaCorrente extends Conta {
     }
 
     public void transferir(Conta contaDestino, Double valor){
-
-    }
-
-    public Double getSaldo(){
-      return this.getTotalCredito() - this.getTotalDebito();
+        if(valor > this.calcularSaldo()){
+            System.out.println("Saldo insuficiente");
+            this.printConta();
+        } else {
+            super.sacar(valor);
+            contaDestino.depositar(valor);
+        }
     }
 
     public Double calcularSaldo(){
@@ -21,22 +23,21 @@ public class ContaCorrente extends Conta {
     }
 
     public void sacar(Double saque){
-        Double saldo = this.getSaldo();
         Double saqueDispovivel = this.calcularSaldo();
 
         if(saque > saqueDispovivel){
             System.out.println("Saldo insuficiente");
-            System.out.print("Saldo da conta: " + saldo + "\nLimite disponivel: " + this.limite + "\nValor de saque disponivel: " + saqueDispovivel);
+            this.printConta();
         } else {
             super.sacar(saque);
         }
     }
 
-    public void printSaldo(){
+    public void printConta(){
         System.out.print(
-                "Conta número: " + this.getNumero() +
-                "\nSaldo da conta: " + this.getSaldo() +
-                "\nLimite disponivel: " + this.limite +
-                "\nValor de saque disponivel: " + this.calcularSaldo());
+            "Conta número: " + this.getNumero() +
+            "\nSaldo da conta: " + this.getSaldo() +
+            "\nLimite disponivel: " + this.limite +
+            "\nValor de saque disponivel: " + this.calcularSaldo());
     }
 }

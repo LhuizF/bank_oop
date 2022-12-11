@@ -11,7 +11,7 @@ public abstract class Conta {
 
 
     public String getNumero() {
-        return numero;
+        return this.numero;
     }
 
     public void depositar(Double value){
@@ -22,6 +22,10 @@ public abstract class Conta {
     public void sacar(Double value){
         Debito saque = new Debito(value);
         this.transfDebito.add(saque);
+    }
+    
+    public Double getSaldo(){
+        return this.getTotalCredito() - this.getTotalDebito();
     }
 
     public void setNumero(String numero) {
