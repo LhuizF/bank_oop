@@ -44,7 +44,7 @@ public class Endereco {
         System.out.println("\n");
     }
 
-    private void setCliente(Cliente cliente){
+    public void setCliente(Cliente cliente){
         this.cliente = cliente;
     }
 }

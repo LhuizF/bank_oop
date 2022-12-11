@@ -12,6 +12,8 @@ public class Funcionario extends Pessoa implements IUsuario {
         this.setCpf(cpf);
         this.setTelefone(telefone);
         this.salario = salario;
+
+        cargo.addFuncionario(this);
         this.cargos.add(cargo);
     }
 

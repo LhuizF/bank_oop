@@ -13,7 +13,11 @@ public class Cliente extends Pessoa implements IUsuario {
         this.setCpf(cpf);
         this.setTelefone(telefone);
         this.vip = isVip;
+
+        endereco.setCliente(this);
         this.addEndereco(endereco);
+
+        conta.setCliente(this);
         this.addConta(conta);
     }
 
@@ -30,6 +34,7 @@ public class Cliente extends Pessoa implements IUsuario {
     }
 
     public void addEndereco(Endereco endereco){
+        endereco.setCliente(this);
         this.enderecos.add(endereco);
     }
 
