@@ -1,5 +1,13 @@
 package models;
 
 public class Credito {
-    public Double valor;
+    private Double valor;
+
+    public Credito(Double value){
+        this.valor = value;
+    }
+
+    public Double getValor(){
+        return this.valor;
+    }
 }
